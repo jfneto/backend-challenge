@@ -1,0 +1,12 @@
+= simple_form_for(@batch) do |f|
+  .row
+    /.col-md-3
+      = f.input :reference, disabled: true
+    .col-md-3
+      = f.input :purchase_channel
+  .action
+    = f.submit class: 'btn btn-success'
+    '
+    = link_to t('.cancel', default: t('helpers.links.cancel')),
+              batches_path,
+              class: 'btn btn-danger'

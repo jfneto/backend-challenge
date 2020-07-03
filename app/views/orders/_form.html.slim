@@ -1,0 +1,33 @@
+= simple_form_for(@order) do |f|
+  .row
+    /.col-md-3
+      = f.input :reference
+    .col-md-3
+      = f.input :purchase_channel
+    .col-md-6
+      = f.input :client_name
+  .row
+    .col-md-6
+      = f.input :address
+    .col-md-3
+      = f.input :delivery_service
+    .col-md-3
+      = f.input :total_value
+  .row
+    .col-md-12
+      = f.input :itens, as: :text
+  /.row
+    .col-md-12
+      - if @order.id.nil?
+        = f.input :status, collection: %w[READY], include_blank: false
+      - else
+        = f.input :status,
+                  collection: %w[READY PRODUCTION CLOSING SENT],
+                  include_blank: false
+
+  .actions
+    = f.submit class: 'btn btn-success'
+    '
+    = link_to t('.cancel', default: t('helpers.links.cancel')),
+              orders_path,
+              class: 'btn btn-danger'

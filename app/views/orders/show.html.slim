@@ -1,0 +1,55 @@
+- model_class = Order
+
+.col-md-12
+  .card
+    .card-header
+      h3 class="card-title" = t '.title'
+    .card-body
+      .row
+        .col-md-6
+          p
+            strong = model_class.human_attribute_name(:reference)
+            ':
+            = @order.reference
+        .col-md-6
+          p
+            strong = model_class.human_attribute_name(:purchase_channel)
+            ':
+            = @order.purchase_channel
+      .row
+        .col-md-6
+          p
+            strong = model_class.human_attribute_name(:client_name)
+            ':
+            = @order.client_name
+        .col-md-6
+          p
+            strong = model_class.human_attribute_name(:address)
+            ':
+            = @order.address
+      .row
+        .col-md-6
+          p
+            strong = model_class.human_attribute_name(:delivery_service)
+            ':
+            = @order.delivery_service
+        .col-md-6
+          p
+            strong = model_class.human_attribute_name(:total_value)
+            ':
+            = @order.total_value
+        .col-md-6
+          p
+            strong = model_class.human_attribute_name(:status)
+            ':
+            = @order.status
+      .row
+        .col-md-12
+          p
+            strong = model_class.human_attribute_name(:itens)
+            ':
+            = @order.itens
+    .card-footer
+      => link_to t('.edit'), edit_order_path(@order), class: 'btn btn-warning'
+      '|
+      =< link_to t('.back'), orders_path, class: 'btn btn-success'

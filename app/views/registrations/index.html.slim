@@ -1,0 +1,33 @@
+- model_class = User
+
+.col-md-12
+  .card
+    .card-header
+      h3 class="card-title" = t '.title'
+    .card-body
+      table[
+        data-toggle="table"
+        data-pagination="true"
+        data-search="true"
+        data-advanced-search="true"
+        data-id-table="advancedTable"
+        data-page-size="10"
+        id="table-users"]
+        thead
+          tr
+            th = model_class.human_attribute_name(:admin)
+            th = model_class.human_attribute_name(:email)
+            th = model_class.human_attribute_name(:name)
+            th = model_class.human_attribute_name(:authentication_token)
+        tbody
+          - @users.each do |user|
+            tr
+              td = user.admin
+              td = user.email
+              td = user.name
+              td = user.authentication_token
+
+javascript:
+  $(function() {
+      $('#table-users').bootstrapTable()
+  })

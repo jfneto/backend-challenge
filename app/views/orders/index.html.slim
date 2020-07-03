@@ -1,0 +1,65 @@
+- model_class = Order
+
+.col-md-12
+  .card
+    .card-header
+      h3 class="card-title" = t '.title'
+    .card-body
+      div id="toolbar"
+        - unless current_user.admin
+          div class="form-inline" role="form"
+            .form-group
+              = link_to fas_icon('plus') + ' ' + t('.new'),
+                        new_order_path,
+                        class: 'btn btn-primary'
+      table[
+        data-toggle="table"
+        data-pagination="true"
+        data-search="true"
+        data-advanced-search="true"
+        data-id-table="advancedTable"
+        data-toolbar="#toolbar"
+        data-page-size="50"
+        id="table-orders"]
+        thead
+          tr
+            th = model_class.human_attribute_name(:reference)
+            th = model_class.human_attribute_name(:purchase_channel)
+            th = model_class.human_attribute_name(:client_name)
+            th = model_class.human_attribute_name(:delivery_service)
+            th = model_class.human_attribute_name(:total_value)
+            th = model_class.human_attribute_name(:status)
+
+            - if current_user.admin
+              th = model_class.human_attribute_name(:user)
+
+            th
+            th
+            th
+        tbody
+          - @orders.each do |order|
+            tr
+              td = order.reference
+              td = order.purchase_channel
+              td = order.client_name
+              td = order.delivery_service
+              td = order.total_value
+              td = order.status
+
+              - if current_user.admin
+                td = order.user.email
+
+              td = link_to fas_icon('eye'), order
+              - if order.status == 'PRODUCTION'
+                td = link_to fas_icon('pencil-alt'), edit_order_path(order)
+              - else
+                td = fas_icon('pencil-alt')
+              td = link_to fas_icon('trash-alt'),
+                           order,
+                           data: { confirm: 'Are you sure?' },
+                           method: :delete
+
+javascript:
+  $(function() {
+      $('#table-orders').bootstrapTable()
+  })

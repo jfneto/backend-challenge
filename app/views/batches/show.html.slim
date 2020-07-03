@@ -1,0 +1,20 @@
+- model_class = Batch
+
+.col-md-12
+  .card
+    .card-header
+      h3 class="card-title" = t '.title'
+    .card-body
+      p
+        strong = model_class.human_attribute_name(:reference)
+        ':
+        = @batch.reference
+      p
+        strong = model_class.human_attribute_name(:purchase_channel)
+        ':
+        = @batch.purchase_channel
+
+    .card-footer
+      => link_to t('.edit'), edit_order_path(@order), class: 'btn btn-warn'
+      '|
+      =< link_to t('.back'), orders_path, class: 'btn btn-success'

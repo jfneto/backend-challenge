@@ -1,0 +1,564 @@
+{
+	"info": {
+		"_postman_id": "64c33bf6-4467-4894-ac06-0940bb04f7a3",
+		"name": "BackendChallenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-User-Token",
+								"value": " VDff2KV8SfVsARaSzE-n",
+								"type": "text"
+							},
+							{
+								"key": "X-User-Email",
+								"value": " devel.neto@gmail.com",
+								"type": "text"
+							},
+							{
+								"key": "X-User-Token",
+								"value": " iJudrhwvBj256sfaegih",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-User-Email",
+								"value": " outro@outro.com",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/v1/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"orders"
+							]
+						},
+						"description": "Lista todas as ordens"
+					},
+					"response": []
+				},
+				{
+					"name": "Status Order by reference",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-User-Token",
+								"value": " VDff2KV8SfVsARaSzE-n",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-User-Email",
+								"value": " devel.neto@gmail.com",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-User-Token",
+								"value": " iJudrhwvBj256sfaegih",
+								"type": "text"
+							},
+							{
+								"key": "X-User-Email",
+								"value": " outro@outro.com",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/v1/orders/status?reference=BR4541921073",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"status"
+							],
+							"query": [
+								{
+									"key": "reference",
+									"value": "BR4541921073"
+								}
+							]
+						},
+						"description": "Lista todas as ordens"
+					},
+					"response": []
+				},
+				{
+					"name": "Status Order by client_name",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-User-Token",
+								"value": " VDff2KV8SfVsARaSzE-n",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-User-Email",
+								"value": " devel.neto@gmail.com",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-User-Token",
+								"value": " iJudrhwvBj256sfaegih",
+								"type": "text"
+							},
+							{
+								"key": "X-User-Email",
+								"value": " outro@outro.com",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/v1/orders/status?limit=10&client_name=João Fernandes",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"status"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "client_name",
+									"value": "João Fernandes"
+								}
+							]
+						},
+						"description": "Lista todas as ordens"
+					},
+					"response": []
+				},
+				{
+					"name": "Order by channel",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-User-Token",
+								"value": " VDff2KV8SfVsARaSzE-n",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-User-Email",
+								"value": " devel.neto@gmail.com",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-User-Token",
+								"value": " iJudrhwvBj256sfaegih",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-User-Email",
+								"value": " outro@outro.com",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/v1/orders/channel?purchase_channel=Site BR",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"channel"
+							],
+							"query": [
+								{
+									"key": "purchase_channel",
+									"value": "Site BR"
+								},
+								{
+									"key": "status",
+									"value": "READY",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Lista todas as ordens"
+					},
+					"response": []
+				},
+				{
+					"name": "Orders",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-User-Token",
+								"value": " VDff2KV8SfVsARaSzE-n",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-User-Email",
+								"value": " devel.neto@gmail.com",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-User-Token",
+								"value": " R9-NjNebfQVxrTRuJ6jf",
+								"type": "text"
+							},
+							{
+								"key": "X-User-Email",
+								"value": " usuario_teste_01@autoforce.com",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"purchase_channel\": \"SiTe BR\",\n        \"client_name\": \"João Fernandes\",\n        \"address\": \"Natalia Amorin\",\n        \"delivery_service\": \"SEDEX\",\n        \"total_value\": 700.00,\n        \"itens\": \"[{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00},{SKU: 123, value: 50.00}]\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"orders"
+							]
+						},
+						"description": "Lista todas as ordens"
+					},
+					"response": []
+				},
+				{
+					"name": "Update order",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-User-Token",
+								"value": " VDff2KV8SfVsARaSzE-n",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-User-Email",
+								"value": " devel.neto@gmail.com",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-User-Token",
+								"value": " iJudrhwvBj256sfaegih",
+								"type": "text"
+							},
+							{
+								"key": "X-User-Email",
+								"value": " outro@outro.com",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"reference\": \"BR1312408912\",\n        \"purchase_channel\": \"Site BR\",\n        \"client_name\": \"João Fernandes\",\n        \"address\": \"Natalia Amorin\",\n        \"delivery_service\": \"PAC\",\n        \"total_value\": 100.00,\n        \"itens\": \"[{SKU: 123, value: 50.00},{SKU: 124, value: 50.00}]\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"orders"
+							]
+						},
+						"description": "Lista todas as ordens"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Batches",
+			"item": [
+				{
+					"name": "Batches",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-User-Token",
+								"value": " R9-NjNebfQVxrTRuJ6jf",
+								"type": "text"
+							},
+							{
+								"key": "X-User-Email",
+								"value": " usuario_teste_01@autoforce.com",
+								"type": "text"
+							},
+							{
+								"key": "X-User-Token",
+								"value": " iJudrhwvBj256sfaegih",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-User-Email",
+								"value": " outro@outro.com",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-User-Token",
+								"value": " xJKAiVS1auX_eYEjwUdv",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-User-Email",
+								"value": " admin@admin.com",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"purchase_channel\": \"Site BR\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/batches",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"batches"
+							]
+						},
+						"description": "Lista todas as ordens"
+					},
+					"response": []
+				},
+				{
+					"name": "Update order to closed",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-User-Token",
+								"value": " R9-NjNebfQVxrTRuJ6jf",
+								"type": "text"
+							},
+							{
+								"key": "X-User-Email",
+								"value": " usuario_teste_01@autoforce.com",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/batches/close?reference=BR7923937580",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"batches",
+								"close"
+							],
+							"query": [
+								{
+									"key": "reference",
+									"value": "BR7923937580"
+								}
+							]
+						},
+						"description": "Lista todas as ordens"
+					},
+					"response": []
+				},
+				{
+					"name": "Update orders to sent",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-User-Token",
+								"type": "text",
+								"value": " VDff2KV8SfVsARaSzE-n",
+								"disabled": true
+							},
+							{
+								"key": "X-User-Email",
+								"type": "text",
+								"value": " devel.neto@gmail.com",
+								"disabled": true
+							},
+							{
+								"key": "X-User-Token",
+								"type": "text",
+								"value": " iJudrhwvBj256sfaegih"
+							},
+							{
+								"key": "X-User-Email",
+								"type": "text",
+								"value": " outro@outro.com"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"reference\": \"BR1312408912\",\n        \"purchase_channel\": \"Site BR\",\n        \"client_name\": \"João Fernandes\",\n        \"address\": \"Natalia Amorin\",\n        \"delivery_service\": \"PAC\",\n        \"total_value\": 100.00,\n        \"itens\": \"[{SKU: 123, value: 50.00},{SKU: 124, value: 50.00}]\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/batches/sent?reference=BR3036852180&delivery_service=PAC",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"batches",
+								"sent"
+							],
+							"query": [
+								{
+									"key": "reference",
+									"value": "BR3036852180"
+								},
+								{
+									"key": "delivery_service",
+									"value": "PAC"
+								}
+							]
+						},
+						"description": "Lista todas as ordens"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "financial",
+			"item": [
+				{
+					"name": "financial",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-User-Token",
+								"value": " R9-NjNebfQVxrTRuJ6jf",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-User-Email",
+								"value": " usuario_teste_01@autoforce.com",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-User-Token",
+								"value": " Hz6Nyz5WzzVyz31CW7Ct",
+								"type": "text"
+							},
+							{
+								"key": "X-User-Email",
+								"value": " admin@autoforce.com.br",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/v1/reports/financial",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"reports",
+								"financial"
+							]
+						},
+						"description": "Lista todas as ordens"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

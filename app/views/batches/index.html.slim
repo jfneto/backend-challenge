@@ -1,0 +1,57 @@
+- model_class = Batch
+
+.col-md-12
+  .card
+    .card-header
+      h3 class="card-title" = t '.title'
+    .card-body
+      div id="toolbar"
+        div class="form-inline" role="form"
+          .form-group
+            = link_to fas_icon('plus') + ' ' + t('.new'),
+                      new_batch_path,
+                      class: 'btn btn-primary'
+      table[
+          data-toggle="table"
+          data-pagination="true"
+          data-search="true"
+          data-advanced-search="true"
+          data-id-table="advancedTable"
+          data-toolbar="#toolbar
+          data-page-size="10
+          id="table-batches"]
+        thead
+          tr
+            th = model_class.human_attribute_name(:reference)
+            th = model_class.human_attribute_name(:purchase_channel)
+            th = model_class.human_attribute_name(:order)
+            - if current_user.admin
+              th = model_class.human_attribute_name(:user)
+
+            th = model_class.human_attribute_name(:created_at)
+            th = model_class.human_attribute_name(:updated_at)
+            th
+            /th
+            /th
+        tbody
+          - @batches.each do |batch|
+            tr
+              td = batch.reference
+              td = batch.purchase_channel
+              th = batch.orders.size
+              - if current_user.admin
+                td = batch.user.email
+
+              td = batch.created_at.strftime('%d/%m/%Y - %H:%M')
+              td = batch.updated_at.strftime('%d/%m/%Y - %H:%M')
+              td = link_to fas_icon('eye'), batch
+              /td = link_to fas_icon('pencil-alt'), edit_batch_path(batch)
+              /td = link_to fas_icon('trash-alt'),
+                            batch,
+                            data: { confirm: 'Are you sure?' },
+                            method: :delete
+
+javascript:
+  $(function() {
+      $('#table-batches').bootstrapTable()
+  })
