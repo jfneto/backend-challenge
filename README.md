@@ -177,6 +177,8 @@
 
   No código ruby utilizei o rubocop para tentar manter meu codigo dentro do padrão definido pela comunidade, tentei ao máximo respeitar as métricas de complexidade, e tamanho máximo dos métodos, sei que existem alguns métodos que precisam ser refatorados para deixar dentro deste padrão, mas meu tempo hábil não permitiu. 
 
+  >Como a partir do rails 5.2 o gerenciamento de chaves mudou coloquei a master.key no projeto para facilitar a analise. (Não subiria esse arquivo em qualquer outra situação).
+
 ## Encerramento
 
   Fico triste por não ter completado o desafio como eu desejava, entregando a suite completa com os testes minimos esperados, Mas fico feliz de ter tido a oportunidade de ter participado, essa oportunidade ampliou meus horizontes, e espero ter conseguido demostrar ao menos um pouco do meu conhecimento e trabalho.
